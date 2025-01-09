@@ -18,3 +18,31 @@ ol,
 ul {
   list-style: none;
 }
+
+header {
+  background-color: rgb(53, 53, 53);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo .logoSfera {
+  height: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSfera:not(:last-child) {
+  margin-right: -10px;
+}

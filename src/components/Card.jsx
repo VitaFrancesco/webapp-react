@@ -12,7 +12,7 @@ export default function Card({ movie }) {
                     <p className={style.avgVote}>{movie.avg_vote}</p>
                     <p className={style.abstract}>{movie.abstract}</p>
                     <div className={style.flexEnd}>
-                        <NavLink to={"/"}><button className={style.readMore}>Read more...</button></NavLink>
+                        <NavLink to={`/${movie.id}`}><button className={style.readMore}>Read more...</button></NavLink>
                     </div>
                 </div>
             </div>

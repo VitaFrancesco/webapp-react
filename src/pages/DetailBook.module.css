@@ -1,0 +1,30 @@
+.book {
+    display: flex;
+    gap: 40px;
+}
+
+.cover {
+    aspect-ratio: 3/5;
+    width: 300px;
+}
+
+.cover img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.title {
+    font-size: 2.5em;
+}
+
+.director {
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.flexEnd {
+    display: flex;
+    justify-content: end;
+}

@@ -1,0 +1,30 @@
+.yellow {
+    color: rgb(255, 225, 0);
+    aspect-ratio: 1/1;
+    width: 10px;
+}
+
+.black {
+    color: rgb(39, 38, 38);
+    aspect-ratio: 1/1;
+    width: 10px;
+}
+
+.twoColor {
+    display: flex;
+}
+
+.halfStar {
+    width: 5px;
+    overflow: hidden;
+}
+
+.end * {
+    position: relative;
+    right: 5px;
+}
+
+.valutation {
+    display: flex;
+    gap: 5px;
+}

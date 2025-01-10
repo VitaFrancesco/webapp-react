@@ -1,0 +1,99 @@
+.col {
+    padding: 10px;
+    width: 25%;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/5;
+    position: relative;
+}
+
+.card img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cardBody {
+    padding: 10px;
+    color: white;
+    background-color: rgba(188, 68, 68, 0.8);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    opacity: 0;
+}
+
+.card:hover {
+    cursor: pointer;
+
+    .cardBody {
+        opacity: 1;
+        transition-delay: .4s;
+        transition-duration: .4s;
+    }
+
+    .avgVote {
+        opacity: 1;
+        transition-delay: .8s;
+        transition-duration: .3s;
+    }
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.director {
+    color: beige;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.avgVote {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+}
+
+.abstract {
+    margin-bottom: 25px;
+}
+
+.readMore {
+    color: white;
+    padding: 5px 10px;
+    background-color: blue;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 3px 3px 5px rgb(2, 2, 186);
+    margin-bottom: 5px;
+}
+
+.readMore:hover {
+    background-color: cornflowerblue;
+    box-shadow: 3px 3px 5px rgb(86, 86, 235);
+
+}
+
+.flexEnd {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 766px) {
+    .col {
+        width: 33%;
+    }
+}
+
+@media (max-width: 586px) {
+    .col {
+        width: 50%;
+    }
+}

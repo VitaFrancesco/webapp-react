@@ -1,9 +1,11 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import Card from "../components/Card"
+import UrlContext from "../context/UrlContext"
 
 export default function Home() {
     const [movies, setMovies] = useState([])
-    const moviesUrl = "http://localhost:3000/movies"
+    const { moviesUrl } = useContext(UrlContext)
     useEffect(() => {
         axios.get(moviesUrl)
             .then((res) => {
@@ -14,14 +16,16 @@ export default function Home() {
 
     return (
         <>
-            <h1>Homepage</h1>
-            <div>{
-                movies.map((movie, i) => {
-                    return (
-                        <h3 key={i}>{movie.title}</h3>
-                    )
-                })
-            }</div>
+            <h1>Movies</h1>
+            <div className="container">
+                <div className="row">{
+                    movies.map((movie, i) => {
+                        return (
+                            <Card key={i} movie={movie} />
+                        )
+                    })
+                }</div>
+            </div>
         </>
     )
 }

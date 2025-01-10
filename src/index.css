@@ -46,3 +46,25 @@ nav {
 .logoSfera:not(:last-child) {
   margin-right: -10px;
 }
+
+.container {
+  max-width: 980px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+main {
+  padding: 50px 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}

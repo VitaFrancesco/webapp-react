@@ -37,10 +37,10 @@ export default function AddReviews({ reload, movieId }) {
     function validateForm() {
         const errors = [];
 
-        if (!initialReview.name) {
+        if (!initialReview.name.trim()) {
             errors.push('name');
         };
-        if (!initialReview.text) {
+        if (!initialReview.text.trim()) {
             errors.push('text');
         };
         if (!initialReview.vote) {
@@ -60,7 +60,14 @@ export default function AddReviews({ reload, movieId }) {
             return
         }
 
-        axios.post(moviesUrl, initialReview).then((res) => {
+        const newReview = {
+            movie_id: movieId,
+            name: initialReview.name.trim(),
+            text: initialReview.text.trim(),
+            vote: initialReview.vote
+        }
+
+        axios.post(moviesUrl, newReview).then((res) => {
 
         }).catch((err) => console.error(err))
 

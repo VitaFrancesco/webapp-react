@@ -26,5 +26,6 @@
 
 .valutation {
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: 3px;
 }

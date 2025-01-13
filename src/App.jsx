@@ -5,8 +5,8 @@ import DefaultLayout from './layout/DefaultLayout'
 import UrlContext from './context/UrlContext'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-library.add(faStar)
+import { faStar, faArrowLeft, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+library.add(faStar, faArrowLeft, faMagnifyingGlass)
 
 function App() {
   const moviesUrl = 'http://localhost:3000/movies'

@@ -62,9 +62,31 @@ nav {
 
 main {
   padding: 50px 0;
+  position: relative;
+}
+
+.research {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.research>input {
+  line-height: 14px;
+  padding: 5px;
+}
+
+.research>button {
+  padding: 5px 10px;
+  background-color: brown;
+  color: white;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.dNone {
+  display: none;
 }

@@ -1,5 +1,6 @@
 import style from "./Card.module.css"
 import { NavLink } from "react-router-dom"
+import Vote from "./Vote"
 
 export default function Card({ movie }) {
     return (
@@ -9,7 +10,7 @@ export default function Card({ movie }) {
                 <div className={style.cardBody}>
                     <h4 className={style.title}>{movie.title}</h4>
                     <p className={style.director}>{movie.director}</p>
-                    <p className={style.avgVote}>{movie.avg_vote}</p>
+                    <div className={style.avgVote}><Vote vote={movie.avg_vote} /></div>
                     <p className={style.abstract}>{movie.abstract}</p>
                     <div className={style.flexEnd}>
                         <NavLink to={`/${movie.id}`}><button className={style.readMore}>Read more...</button></NavLink>

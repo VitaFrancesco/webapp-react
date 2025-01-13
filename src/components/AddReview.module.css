@@ -1,0 +1,58 @@
+.form {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 30px 10px 10px;
+    box-shadow: 2px 2px 3px gray, -2px -2px 3px gray;
+    position: relative;
+}
+
+.form>*:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating>.star:hover {
+    cursor: pointer;
+}
+
+.yellow {
+    color: rgb(255, 225, 0);
+}
+
+.rating>.star:hover~.star,
+.rating>.star:hover {
+    color: rgb(255, 225, 0);
+}
+
+.error {
+    color: rgb(221, 21, 21);
+    background-color: beige;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.sector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sector:first-child input {
+    max-width: 300px;
+}
+
+.submit {
+    color: white;
+    padding: 10px 20px;
+    background-color: rgb(130, 27, 27);
+    border-radius: 8px;
+}

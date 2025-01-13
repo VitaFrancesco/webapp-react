@@ -18,6 +18,7 @@
 
 .cardBody {
     padding: 10px;
+    padding-top: 25px;
     color: white;
     background-color: rgba(188, 68, 68, 0.8);
     position: absolute;
@@ -55,6 +56,7 @@
 }
 
 .avgVote {
+    display: flex;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -78,6 +80,7 @@
 .readMore:hover {
     background-color: cornflowerblue;
     box-shadow: 3px 3px 5px rgb(86, 86, 235);
+    cursor: pointer;
 
 }
 

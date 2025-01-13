@@ -1,0 +1,20 @@
+.name {
+    color: gray;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.ranking {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.review {
+    position: relative;
+}
+
+.review:not(:last-child) {
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}

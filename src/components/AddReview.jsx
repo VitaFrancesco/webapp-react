@@ -6,7 +6,7 @@ import UrlContext from "../context/UrlContext"
 import MessageContext from "../context/MessageContext";
 import LoaderContext from "../context/LoaderContext";
 
-export default function AddReviews({ reload, movieId, submit }) {
+export default function AddReviews({ reload }) {
     const { moviesUrl } = useContext(UrlContext)
     const { setMessage } = useContext(MessageContext)
     const { setLoader } = useContext(LoaderContext)
@@ -16,7 +16,6 @@ export default function AddReviews({ reload, movieId, submit }) {
 
 
     const [initialReview, setInitialReview] = useState({
-        movie_id: movieId,
         name: "",
         text: "",
         vote: 0
@@ -62,38 +61,28 @@ export default function AddReviews({ reload, movieId, submit }) {
         const errors = validateForm()
 
         if (errors.length) {
+            setLoader(false)
             setErrorForm(errors)
             return
         }
 
         const newReview = {
-            movie_id: movieId,
             name: initialReview.name.trim(),
             text: initialReview.text.trim(),
             vote: initialReview.vote
         }
 
-        axios.post(`${moviesUrl}/${movieId}/reviews`, newReview).then((res) => {
+        reload(newReview)
 
-        }).catch((err) => {
-            console.log(err.response.data)
-        }).finally(() => {
-            setLoader(false)
-        })
+
 
         setInitialReview({
-            movie_id: movieId,
             name: "",
             text: "",
             vote: 0
         })
         setRating(0)
-        submit()
-        reload()
-        setMessage('Grazie per aver detto la tua sul film!')
-        setTimeout(() => {
-            setMessage('')
-        }, 4000)
+
     }
 
     return (

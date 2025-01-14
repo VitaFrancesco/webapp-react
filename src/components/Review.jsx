@@ -8,26 +8,7 @@ import MessageContext from "../context/MessageContext"
 import LoaderContext from "../context/LoaderContext"
 import { useContext } from "react"
 
-export default function Review({ review, reload }) {
-    const { moviesUrl } = useContext(UrlContext)
-    const { setMessage } = useContext(MessageContext)
-    const { setLoader } = useContext(LoaderContext)
-
-    function deleteReviews() {
-        setLoader(true)
-        axios.delete(`${moviesUrl}/${review.id}/reviews`)
-            .then((res) => {
-
-            }).catch((err) => console.error(err))
-            .finally(() => {
-                setLoader(false)
-            })
-        reload()
-        setMessage('Hai rimosso definitivamente il commento')
-        setTimeout(() => {
-            setMessage('')
-        }, 4000);
-    }
+export default function Review({ review, deleteHandler }) {
     return (
         <div className={style.review}>
             <p>{review.text}</p>
@@ -36,7 +17,7 @@ export default function Review({ review, reload }) {
                 <Vote vote={review.vote} />
             </div>
             <p className={style.name}>{review.name}</p>
-            <div className={style.trash} onClick={deleteReviews} >
+            <div className={style.trash} onClick={() => deleteHandler(review.id)} >
                 <FontAwesomeIcon icon="fa-solid fa-trash-can" />
             </div>
         </div>

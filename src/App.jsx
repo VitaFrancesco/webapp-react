@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import DetailBook from './pages/DetailBook'
+import DetailMovie from './pages/DetailMovie'
 import DefaultLayout from './layout/DefaultLayout'
 import UrlContext from './context/UrlContext'
 
@@ -29,7 +29,7 @@ function App() {
               <Route element={<DefaultLayout />}>
                 <Route path='/'>
                   <Route index element={<Home />}></Route>
-                  <Route path=':id' element={<DetailBook />}></Route>
+                  <Route path=':id' element={<DetailMovie />}></Route>
                 </Route>
               </Route>
             </Routes>

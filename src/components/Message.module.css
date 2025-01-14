@@ -1,0 +1,21 @@
+.message {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.message svg {
+    color: green;
+    font-size: 24px;
+}
+
+.message p {
+    font-size: 18px;
+    background-color: gray;
+    border-radius: 8px;
+    padding: 3px;
+    color: white;
+}

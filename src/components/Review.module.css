@@ -4,14 +4,27 @@
     margin-bottom: 8px;
 }
 
-.ranking {
+/* .ranking {
     position: absolute;
     top: 5px;
     right: 0;
-}
+}*/
 
 .review {
     position: relative;
+}
+
+.ranking {
+    display: flex;
+    gap: 5px;
+}
+
+.trash {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    padding: 8px;
 }
 
 .review:not(:last-child) {

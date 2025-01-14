@@ -3,9 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from "axios";
 import style from "./AddReview.module.css"
 import UrlContext from "../context/UrlContext"
+import MessageContext from "../context/MessageContext";
+import LoaderContext from "../context/LoaderContext";
 
-export default function AddReviews({ reload, movieId }) {
+export default function AddReviews({ reload, movieId, submit }) {
     const { moviesUrl } = useContext(UrlContext)
+    const { setMessage } = useContext(MessageContext)
+    const { setLoader } = useContext(LoaderContext)
+
     const [rating, setRating] = useState(0)
     const [errorForm, setErrorForm] = useState([])
 
@@ -52,6 +57,7 @@ export default function AddReviews({ reload, movieId }) {
 
     function createreview(event) {
         event.preventDefault()
+        setLoader(true)
 
         const errors = validateForm()
 
@@ -67,9 +73,13 @@ export default function AddReviews({ reload, movieId }) {
             vote: initialReview.vote
         }
 
-        axios.post(moviesUrl, newReview).then((res) => {
+        axios.post(`${moviesUrl}/${movieId}/reviews`, newReview).then((res) => {
 
-        }).catch((err) => console.error(err))
+        }).catch((err) => {
+            console.log(err.response.data)
+        }).finally(() => {
+            setLoader(false)
+        })
 
         setInitialReview({
             movie_id: movieId,
@@ -78,7 +88,12 @@ export default function AddReviews({ reload, movieId }) {
             vote: 0
         })
         setRating(0)
+        submit()
         reload()
+        setMessage('Grazie per aver detto la tua sul film!')
+        setTimeout(() => {
+            setMessage('')
+        }, 4000)
     }
 
     return (
@@ -96,7 +111,7 @@ export default function AddReviews({ reload, movieId }) {
                 <textarea name="text" rows={4} value={initialReview.text} onChange={(e) => onChange(e)} placeholder="Cosa ne pensi del film..." />
             </div>
 
-            <div className={`${style.sector} ${style.vote}`}>
+            <div className={`${style.sector}`}>
                 <div className={`${style.error} ${errorForm.includes('vote') ? "" : "dNone"}`}>Voto mancante</div>
                 <div className={style.rating}>
                     <label className={style.star}>

@@ -1,9 +1,10 @@
 .form {
-    border: 1px solid gray;
+    border: 1px solid black;
+    background-color: white;
     border-radius: 8px;
     padding: 30px 10px 10px;
-    box-shadow: 2px 2px 3px gray, -2px -2px 3px gray;
     position: relative;
+    width: 90%;
 }
 
 .form>*:not(:last-child) {
@@ -47,7 +48,16 @@
 }
 
 .sector:first-child input {
-    max-width: 300px;
+    max-width: 200px;
+    border-radius: 4px;
+    padding: 3px;
+    border: 1px solid black;
+}
+
+.form textarea {
+    border-radius: 4px;
+    padding: 3px;
+    border: 1px solid black;
 }
 
 .submit {
@@ -55,4 +65,5 @@
     padding: 10px 20px;
     background-color: rgb(130, 27, 27);
     border-radius: 8px;
+    cursor: pointer;
 }

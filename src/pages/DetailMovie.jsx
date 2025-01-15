@@ -148,10 +148,10 @@ export default function DetailMovie() {
                             <button className={style.addNewReview} onClick={showForm}><FontAwesomeIcon icon="fa-solid fa-plus" /></button>
                             <div className={style.message}>Aggiungi Recensione</div>
                             <p>rating: </p>
-                            <Vote vote={movie.avg_vote} />
+                            {movie.avg_vote && <Vote vote={movie.avg_vote} />}
                         </div>
                     </div>
-                    {reviews.map((rev, i) => {
+                    {reviews && reviews.map((rev, i) => {
                         return (
                             <Review key={i} review={rev} reload={reload} deleteHandler={deleteReviews} />
                         )

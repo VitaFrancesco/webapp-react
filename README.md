@@ -1,8 +1,23 @@
-# React + Vite
+# WebApp React 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**WebApp React** è un'interfaccia frontend sviluppata in **React** che consente di esplorare, filtrare e recensire film. Si interfaccia con una REST API esterna (repository `webapp-express`) tramite chiamate HTTP effettuate con **Axios**.
 
-Currently, two official plugins are available:
+## 🧩 Struttura del progetto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Client:** React
+- **Server/API:** [webapp-express](https://github.com/VitaFrancesco/webapp-express)
+- **Chiamate API:** tramite Axios
+- **Funzionalità:**
+  - Visualizzazione di una lista di film
+  - Filtraggio dei film per titolo, regista o descrizione
+  - Visualizzazione dettagliata del singolo film (inclusa media voti)
+  - Inserimento recensione tramite form
+  - Eliminazione recensioni
+  - Gestione errori lato utente in caso di mancata connessione o validazioni
+  - Loader per l'attesa dei risultati
+
+## 🔗 Dipendenze principali
+
+- React
+- Axios
+- React Router DOM
